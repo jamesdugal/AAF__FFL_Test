@@ -1,0 +1,33 @@
+echo "# AAF__FFL_Test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jamesdugal/AAF__FFL_Test.git
+git push -u origin master
+
+{
+  node(id: "Gjm5E9bwm9-ZIwVYJqIG6cvI2Ner") {
+    ... on Game {
+      playersConnection(first: 10) {
+        edges {
+          node {
+            jerseyNumber
+          }
+          team {
+            abbreviation
+          }
+          stats {
+            passingYards
+            rushingYards
+            tackles
+            fumbles
+            twoPointConversionPassesGood
+            twoPointConversionRushesGood
+            twoPointConversionsCompleted
+            
+          }
+        }
+      }
+    }
+  }
+}
